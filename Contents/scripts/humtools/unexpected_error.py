@@ -9,7 +9,7 @@ from .log import Log
 class UnexpectedError(Exception):
     @staticmethod
     def catch(function):
-        """UnexpectedErrorを検知するデコレータ"""
+        '''UnexpectedErrorを検知するデコレータ'''
         @functools.wraps(function)
         def wrapper(*args, **keywords):
             try:
@@ -25,9 +25,9 @@ class UnexpectedError(Exception):
         self.__show_inviewmessage()
 
     def __output_scripteditor(self):
-        msg = u"{}".format(self)
+        msg = u'{}'.format(self)
         Log.log(msg)
 
     def __show_inviewmessage(self):
-        highlightedMsg = u"<hl>{}</hl>".format(self)
-        cmds.inViewMessage(amg=highlightedMsg, pos="botCenter", fade=True)
+        highlighted_msg = u'<hl>{}</hl>'.format(self)
+        cmds.inViewMessage(amg=highlighted_msg, pos='botCenter', fade=True)

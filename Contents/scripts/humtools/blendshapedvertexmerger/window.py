@@ -24,10 +24,10 @@ class Window:
     def __create_window(self):
         cmds.window(self.tool_name, title=self.tool_name)
         with LayoutManager(cmds.columnLayout(adj=True)):
-            cmds.text(l="")
-            cmds.button(l="Merge vertex", h=50,
+            cmds.text(l='')
+            cmds.button(l='Merge vertex', h=50,
                         c=lambda args: self.__merge_vertex())
-            cmds.text(l="")
+            cmds.text(l='')
 
 
     def __merge_vertex(self):

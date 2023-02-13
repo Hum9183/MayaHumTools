@@ -24,4 +24,4 @@ def __add_folder():
 
 def __add_menu():
     __add_folder()
-    bsvm_setup.setup()
+    bsvm_setup.add_menu()

@@ -22,8 +22,8 @@ def main():
     vtx_merger.merge(vtx_ids, blendshape_targets)
     non_deformer_history_deleter.delete(blendshape_targets)
 
-    """
+    '''
     TODO:
     Maya2022ではBaseMeshのnonDeformerHistoryを削除した時点でTargetMeshが壊れてしまう。
     BlendShape自体は削除してしまい、あとでBlendShapeを再設定する方針ならMaya2022でも正常動作しそう。
-    """
+    '''

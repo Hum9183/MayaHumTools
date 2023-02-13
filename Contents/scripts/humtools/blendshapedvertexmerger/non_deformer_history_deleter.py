@@ -5,7 +5,6 @@ from .const import Const
 def delete(meshes):
     if (type(meshes) is list):
         [__delete(m) for m in meshes]
-        return
     else:
         __delete(meshes)
 

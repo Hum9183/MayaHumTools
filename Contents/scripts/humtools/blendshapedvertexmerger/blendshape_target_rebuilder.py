@@ -23,7 +23,7 @@ def __get_bs_nodes(base_mesh):
 
 
 def __exists_validate(bs_nodes):
-    if len(bs_nodes) == 0:
+    if bs_nodes == []:
         raise UnexpectedError(u"ブレンドシェイプが存在しません。")
 
 
@@ -39,9 +39,9 @@ def __rebuild(bs_node):
 
 def __set_bs_weight_to_zero(bs_node, bs_targets_indices):
     # NOTE: ブレンドシェイプのウェイト値が入っていると、メッシュが壊れるため、セーフティとして行う
-    weight_value = 0
+    WEIGHT_VALUE = 0
     for idx in bs_targets_indices:
-        cmds.blendShape(bs_node, e=True, weight=(idx, weight_value))
+        cmds.blendShape(bs_node, e=True, weight=(idx, WEIGHT_VALUE))
 
 
 def __delete_already_rebuilt_targets(bs_node):

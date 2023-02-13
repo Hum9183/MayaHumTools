@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-def reload_a_few_times(modules):
+def reload_py_ver(modules):
     [__reload_py_ver(m) for m in modules]
 
 
