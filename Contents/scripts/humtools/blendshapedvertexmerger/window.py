@@ -34,9 +34,9 @@ class Window: # TODO: 抽象クラスを作る
 
 
     def __create_check_box(self):
-        # NOTE: Maya2022以降はブレンドシェイプを再構成しないとメッシュが壊れる可能性が高い
+        # NOTE: Maya2022以降はブレンドシェイプを再構築しないとメッシュが壊れる可能性が高い
         recommended_version = RootConst.is_the_maya_version_after_2022()
-        cmds.checkBox(Const.RECONFIGURE_BS_CHECK_BOX, l=u'ブレンドシェイプを再構成する', v=recommended_version)
+        cmds.checkBox(Const.RECONFIGURE_BS_CHECK_BOX, l=u'ブレンドシェイプを再構築する', v=recommended_version)
 
 
     def __merge_vertex(self):
