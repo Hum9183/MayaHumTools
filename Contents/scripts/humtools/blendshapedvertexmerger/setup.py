@@ -22,11 +22,11 @@ def add_menu():
 
         def bsvm_reload_modules():
             from humtools.blendshapedvertexmerger import const, window, main, \
-                selected_getter, blendshape_target_rebuilder, vtx_merger, non_deformer_history_deleter
+                selected_getter, blendshape_target_rebuilder, vtx_merger, non_deformer_history_deleter, blendshape_reconfigurator
 
             from humtools import module_reloader
             modules = [const, window, main, \
-                selected_getter, blendshape_target_rebuilder, vtx_merger, non_deformer_history_deleter]
+                selected_getter, blendshape_target_rebuilder, vtx_merger, non_deformer_history_deleter, blendshape_reconfigurator]
             module_reloader.reload_py_ver(modules)
 
 

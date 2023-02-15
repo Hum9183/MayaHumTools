@@ -2,19 +2,24 @@
 
 from maya import cmds
 
+from ..lib import blendshape
 from ..unexpected_error import UnexpectedError
+from .blendshape_reconfigurator import BlendShapeReconfigurator
 from .const import Const
-from . import selected_getter
 from . import blendshape_target_rebuilder
-from . import vtx_merger
 from . import non_deformer_history_deleter
+from . import selected_getter
+from . import vtx_merger
 
 
 @UnexpectedError.catch
-def main():
+def main(reconfigure_bs_setting):
     vtx_ids, base_mesh = selected_getter.get_vtx_ids_and_mesh()
 
     blendshape_targets = blendshape_target_rebuilder.rebuild(base_mesh)
+    bs_reconfigurator = BlendShapeReconfigurator(reconfigure_bs_setting, base_mesh, blendshape.get_nodes(base_mesh))
+    bs_reconfigurator.preserve()
+    bs_reconfigurator.delete_nodes()
 
     vtx_merger.merge(vtx_ids, base_mesh)
     non_deformer_history_deleter.delete(base_mesh)
@@ -22,8 +27,4 @@ def main():
     vtx_merger.merge(vtx_ids, blendshape_targets)
     non_deformer_history_deleter.delete(blendshape_targets)
 
-    '''
-    TODO:
-    Maya2022ではBaseMeshのnonDeformerHistoryを削除した時点でTargetMeshが壊れてしまう。
-    BlendShape自体は削除してしまい、あとでBlendShapeを再設定する方針ならMaya2022でも正常動作しそう。
-    '''
+    bs_reconfigurator.configure()

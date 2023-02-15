@@ -11,6 +11,7 @@ def execute():
     setParent -menu "MayaWindow|mainWindowMenu";
     ''')
     __add_menu()
+    __register_maya_version()
 
 
 def __add_folder():
@@ -25,3 +26,7 @@ def __add_folder():
 def __add_menu():
     __add_folder()
     bsvm_setup.add_menu()
+
+
+def __register_maya_version():
+    Const.MAYA_VERSION = int(cmds.about(v=True))

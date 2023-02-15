@@ -46,6 +46,7 @@ def __set_bs_weight_to_zero(bs_node, bs_targets_indices):
 
 def __delete_already_rebuilt_targets(bs_node):
     # NOTE: すでにリビルド済みのメッシュはBSノードにコネクトしていてうまくマージできない可能性があるため、一旦すべて削除する
+    # NOTE: ターゲット名とリビルド済のターゲットメッシュ名が異なる可能性もあるため、そういう場合のためにも一旦すべて削除する
     rebuilt_target_meshes = cmds.blendShape(bs_node, q=True, t=True)   # WARNING: BS名ではない
     if (rebuilt_target_meshes != []):
         cmds.delete(rebuilt_target_meshes)
