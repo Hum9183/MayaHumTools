@@ -8,16 +8,19 @@ C:\Program Files\Autodesk\ApplicationPluginsにクローンするか、ZIPファ
 ウィンドウタブ内にHumToolsという項目が追加されたらOKです。
 
 ## BlendShapedVertexMerger
+
+### バージョン
+Maya2018, 2022で正常な動作を確認しています。<br>
+
 ### 概要
 ブレンドシェイプを設定してあるメッシュの頂点をマージするツールです。<br>
 普通の編集なら壊れてしまうところを、壊さずにマージができます。
 
 ### 使い方
-マージしたい頂点を選択した状態で「Merge vertex」を押すと実行されます。<br>
-マージの種類は「頂点をセンターにマージ」を採用しています。
+マージしたい頂点を選択した状態で「Merge vertex」を押すとマージが実行されます。<br>
 
-![BlendShapedVertexMerger_Demo](https://user-images.githubusercontent.com/117564304/218306243-db1a6532-d313-45ef-b8cf-c38f8166eaa4.gif)
+![BlendShapedVertexMerger_Demo](https://user-images.githubusercontent.com/117564304/219054782-81f45306-b419-4002-bc55-533d91a785a1.gif)
 
-### 注意点
-現在Maya2018で正常な動作を確認しています。<br>
-Maya2022でも動作はしますが、ブレンドシェイプの状態によっては正常に動作しないことを確認しています。
+### ツール詳細
+- マージの種類は「頂点をセンターにマージ」を採用しています。<br>
+- 「ブレンドシェイプを再構築する」オプションをオンにすると、ブレンドシェイプノードを一度削除し再構築します(Maya2022ではオン推奨)<br>
