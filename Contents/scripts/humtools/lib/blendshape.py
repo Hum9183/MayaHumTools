@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from maya import cmds
 
-from ..unexpected_error import UnexpectedError
+from ..util.unexpected_error import UnexpectedError
 
 
 def get_nodes(mesh):

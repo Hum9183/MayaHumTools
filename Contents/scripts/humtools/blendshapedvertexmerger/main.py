@@ -2,8 +2,8 @@
 
 from maya import cmds
 
+from ..util.unexpected_error import UnexpectedError
 from ..lib import blendshape
-from ..unexpected_error import UnexpectedError
 from .blendshape_reconfigurator import BlendShapeReconfigurator
 from .const import Const
 from . import blendshape_target_rebuilder

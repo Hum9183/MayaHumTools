@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from maya import cmds
 
-from .const import Const
+from ..const import Const
+
 
 class Log:
     @staticmethod

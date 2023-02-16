@@ -3,7 +3,7 @@ from itertools import chain
 
 from maya import cmds
 
-from ..unexpected_error import UnexpectedError
+from ..util.unexpected_error import UnexpectedError
 from .const import Const
 
 
