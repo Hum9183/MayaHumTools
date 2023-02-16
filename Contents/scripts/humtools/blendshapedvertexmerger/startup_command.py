@@ -12,7 +12,7 @@ def bsvm_reload_modules():
     from humtools import module_reloader
     modules = [const, window, main, selected_getter, blendshape_target_rebuilder, \
                 vtx_merger, non_deformer_history_deleter, blendshape_reconfigurator]
-    module_reloader.reload_py_ver(modules)
+    module_reloader.reload_a_few_times(modules)
 
 
 def bsvm_show_window():

@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-def reload_py_ver(modules):
+def reload_a_few_times(modules):
+    [__reload(modules) for _ in range(2)] # NOTE: 一回のreloadではリロードしきれない？
+
+
+def __reload(modules):
     [__reload_py_ver(m) for m in modules]
 
 
