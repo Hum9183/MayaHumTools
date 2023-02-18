@@ -7,7 +7,7 @@ from .const import Const
 from . import main
 
 
-class Window: # TODO: 抽象クラスを作る
+class Window:
     def __init__(self, tool_name):
         self.tool_name = tool_name
 

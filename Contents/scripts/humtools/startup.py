@@ -3,6 +3,7 @@ from maya import cmds, mel
 
 from .const import Const
 from .blendshapedvertexmerger import setup as bsvm_setup
+from .blendshapedmesheditor import setup as bsme_setup
 
 
 def execute():
@@ -25,3 +26,4 @@ def __add_folder():
 def __add_menu():
     __add_folder()
     bsvm_setup.add_menu()
+    bsme_setup.add_menu()
