@@ -16,22 +16,22 @@ def get_mesh():
 
 def __onlyone_validate(sels):
     if len(sels) >= 2:
-        raise UnexpectedError(u"メッシュを1つのみ選択してください。")
+        raise UnexpectedError(u'メッシュを1つのみ選択してください。')
 
 
 def __to_shape_validate(sel):
     shape = cmds.listRelatives(sel, s=True)[0]
     if shape is None:
-        raise UnexpectedError(u"メッシュを選択してください。1")
+        raise UnexpectedError(u'メッシュを選択してください。')
     return shape
 
 
 def __exists_validate(sels):
-    if (sels == []):
-        raise UnexpectedError(u"メッシュを選択してください。2")
+    if sels == []:
+        raise UnexpectedError(u'メッシュを選択してください。')
 
 
 def __is_mesh_validate(shape):
     # NOTE: カメラ等ではないかの確認
     if cmds.nodeType(shape) != NodeType.MESH:
-        raise UnexpectedError(u"メッシュを選択してください。3")
+        raise UnexpectedError(u'メッシュを選択してください。')
