@@ -24,7 +24,7 @@ class Window:
 
 
     def __create_window(self):
-        cmds.window(self.tool_name, title=self.tool_name)
+        cmds.window(self.tool_name, title=self.tool_name, mxb=False, mnb=False)
         with LayoutManager(cmds.columnLayout(adj=True)):
             cmds.text(l='')
             cmds.button(l='Merge vertex', h=50,
