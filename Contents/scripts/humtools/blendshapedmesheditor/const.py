@@ -3,7 +3,7 @@ from ..util.readonly import metaclass
 
 
 class Const(metaclass('Const')):
-    TOOL_NAME   = 'BlendShapedMeshEditor'
+    TOOL_NAME   = 'HumBlendShapedMeshEditor'
     RUN_BUTTON  = 'RunButton'
 
     START_TEXT  = 'Start editing'
