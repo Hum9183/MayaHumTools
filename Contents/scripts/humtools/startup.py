@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from maya import cmds, mel
 
-from .const import Const
+from .hum_tools_const import HumToolsConst
 from .blendshapedvertexmerger import setup as bsvm_setup
-from .blendshapedmesheditor import setup as bsme_setup
+from .blendshapedmesheditor   import setup as bsme_setup
 
 
 def execute():
@@ -17,8 +17,8 @@ def execute():
 def __add_folder():
     cmds.menuItem(divider=True)
     cmds.menuItem(
-        Const.HUM_TOOLS_FOLDER,
-        label=Const.HUM_TOOLS,
+        HumToolsConst.HUM_TOOLS_FOLDER,
+        label=HumToolsConst.HUM_TOOLS,
         subMenu=True,
         tearOff=True)
 

@@ -2,7 +2,7 @@
 from textwrap import dedent
 
 from maya import cmds
-from .const import Const
+from .hum_tools_const import HumToolsConst
 
 
 def add(tool_name, startup_command_str):
@@ -10,7 +10,7 @@ def add(tool_name, startup_command_str):
         tool_name,
         label=tool_name,
         annotation='Run {}'.format(tool_name),
-        parent=Const.HUM_TOOLS_FOLDER,
+        parent=HumToolsConst.HUM_TOOLS_FOLDER,
         echoCommand=True,
         command=dedent(startup_command_str)
     )

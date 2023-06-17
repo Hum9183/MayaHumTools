@@ -2,7 +2,7 @@
 from maya import cmds
 from maya.common.ui import LayoutManager
 
-from ..const import Const as RootConst
+from ..hum_tools_const import HumToolsConst
 from .const import Const
 from . import main
 
@@ -35,7 +35,7 @@ class Window:
 
     def __create_check_box(self):
         # NOTE: Maya2022以降はブレンドシェイプを再構築しないとメッシュが壊れる可能性が高い
-        recommended_version = RootConst.is_the_maya_version_after_2022()
+        recommended_version = HumToolsConst.is_the_maya_version_after_2022()
         cmds.checkBox(Const.RECONFIGURE_BS_CHECK_BOX, l=u'ブレンドシェイプを再構築する', v=recommended_version)
 
 
