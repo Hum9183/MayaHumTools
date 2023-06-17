@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from .hum_tools_const import HumToolsConst
+
 
 def reload_a_few_times(modules):
     [__reload(modules) for _ in range(2)] # NOTE: 一回のreloadではリロードしきれない？
@@ -9,9 +11,8 @@ def __reload(modules):
 
 
 def __reload_py_ver(module):
-    # TODO: どこかでバージョン取得して、そこを参照するようにする
-    try:
+    if HumToolsConst.is_the_maya_version_before_2020():
         reload(module)      # Python2   Global空間の組み込みreload
-    except NameError:
+    else:
         import importlib    # Python3
         importlib.reload(module)
