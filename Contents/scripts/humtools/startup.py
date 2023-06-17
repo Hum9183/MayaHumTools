@@ -4,6 +4,7 @@ from maya import cmds, mel
 from .hum_tools_const import HumToolsConst
 from .blendshapedvertexmerger import setup as bsvm_setup
 from .blendshapedmesheditor   import setup as bsme_setup
+from .skinweightsio           import setup as swio_setup
 
 
 def execute():
@@ -27,3 +28,4 @@ def __add_menu():
     __add_folder()
     bsvm_setup.add_menu()
     bsme_setup.add_menu()
+    swio_setup.add_menu()
