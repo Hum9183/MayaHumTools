@@ -58,7 +58,7 @@ class Window(HumWindowBase):
         super(Window, self).reload_window()
 
     def __open_document_in_webbrowser(self):
-        url = 'https://github.com/Hum9183/MayaHumTools'
+        url = 'https://github.com/Hum9183/MayaHumTools#skinweightsbugsearcher'
         webbrowser.open(url)
 
     def __build_button(self, lang):
