@@ -75,7 +75,7 @@ class WorkingMesh:
         return self.__skincluster_fn.getWeights(self.__mesh_dag_path, self.__get_current_vert_component())[MD_ARRAY_INDEX]
 
     def get_vert_ids_nearby_current_vert(self):
-        """周囲の頂点の「近くの頂点のID」を取得する"""
+        """current頂点の「近くの頂点のID」を取得する"""
         nearby_vert_ids = []
         face_ids = self.mesh_vert_it_main.getConnectedFaces() # NOTE: Faceで繋がっているものを取得する
 
