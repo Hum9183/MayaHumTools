@@ -92,7 +92,7 @@ class WorkingMesh:
     def calc_infl_vaild_nearby_verts(self, nearby_vert_ids):
         """周囲の頂点の「ウェイトが振られているインフルエンスリスト」を作成する"""
         MD_ARRAY_INDEX = 0
-        infl_valid = [False] * self.__influences_count
+        all_infl_valid = [False] * self.__influences_count
 
         for nearby_vert_id in nearby_vert_ids:
             # NOTE: mesh_vert_it_mainは頂点走査のメインループで使用しているため、subのイテレータを使用する
@@ -100,18 +100,18 @@ class WorkingMesh:
             component = self.__mesh_vert_it_sub.currentItem()
             nearby_vert_weights = self.__skincluster_fn.getWeights(self.__mesh_dag_path, component)[MD_ARRAY_INDEX]
             nearby_vert_infl_valid = self.__calc_influences_valid(nearby_vert_weights)
-            infl_valid = [infl or valid for infl, valid in zip(infl_valid, nearby_vert_infl_valid)] # WARNING: 再代入
+            all_infl_valid = [all or nearby for all, nearby in zip(all_infl_valid, nearby_vert_infl_valid)] # WARNING: 再代入
 
-        return infl_valid
+        return all_infl_valid
 
     def calc_unexpected_influeces(self, skinweights, nearby_vert_infl_valid):
         """「周囲の頂点ではウェイトが振られていない骨」にウェイトが振られているかを計算する。
             振られていた骨名のリストを返す。
         """
         current_infl_valid = self.__calc_influences_valid(skinweights)
-        unexpected_influences = [(current is True) and (nearby is False) for current, nearby in zip(current_infl_valid, nearby_vert_infl_valid)]
-        infl_names = [name for vaild, name in zip(unexpected_influences, self.__influences_names) if vaild]
-        return infl_names
+        unexpected_infl_valid = [(current is True) and (nearby is False) for current, nearby in zip(current_infl_valid, nearby_vert_infl_valid)]
+        unexpected_infl_names = [name for vaild, name in zip(unexpected_infl_valid, self.__influences_names) if vaild]
+        return unexpected_infl_names
 
     def __get_current_vert_component(self):
         return self.mesh_vert_it_main.currentItem()
