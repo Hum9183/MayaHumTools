@@ -1,5 +1,7 @@
 # MayaHumTools
 
+Mayaの便利なツール群
+
 ## インストール方法
 C:\Program Files\Autodesk\ApplicationPluginsにクローンするか、ZIPファイルを解凍して配置してください。
 
