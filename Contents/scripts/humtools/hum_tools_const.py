@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys
+
 from maya import cmds
 
 from .util.readonly import metaclass
@@ -18,3 +20,9 @@ class HumToolsConst(metaclass('HumToolsConst')):
     @staticmethod
     def is_the_maya_version_before_2020():
         return HumToolsConst.MAYA_VERSION <= 2020
+
+    @staticmethod
+    def is_python_major_version_2():
+        ver = sys.version
+        major_ver = ver.split('.')[0]
+        return major_ver == '2'

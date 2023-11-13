@@ -11,7 +11,7 @@ def __reload(modules):
 
 
 def __reload_py_ver(module):
-    if HumToolsConst.is_the_maya_version_before_2020():
+    if HumToolsConst.is_python_major_version_2():
         reload(module)      # Python2   Global空間の組み込みreload
     else:
         import importlib    # Python3
