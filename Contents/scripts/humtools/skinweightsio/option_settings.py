@@ -33,13 +33,13 @@ class OptionSettings:
         self.__save_json(new_option_settings_dict)
 
     def load(self):
-        text_io_wrapper = open(self.__json_path)
-        option_settings_json = json.load(text_io_wrapper)
+        with open(self.__json_path) as text_io_wrapper:
+            option_settings_json = json.load(text_io_wrapper)
 
-        self.import_method     = option_settings_json[Const.KEY_IMPORT_METHOD]
-        self.ignore_name       = option_settings_json[Const.KEY_IGNORE_NAME]
-        self.normalize_weights = option_settings_json[Const.KEY_NORMALIZE_WEIGHTS]
-        self.auto_binding      = option_settings_json[Const.KEY_AUTO_BINDING]
+            self.import_method     = option_settings_json[Const.KEY_IMPORT_METHOD]
+            self.ignore_name       = option_settings_json[Const.KEY_IGNORE_NAME]
+            self.normalize_weights = option_settings_json[Const.KEY_NORMALIZE_WEIGHTS]
+            self.auto_binding      = option_settings_json[Const.KEY_AUTO_BINDING]
 
     def reset(self):
         self.__create_init()
