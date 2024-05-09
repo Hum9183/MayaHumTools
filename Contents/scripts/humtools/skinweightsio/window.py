@@ -101,11 +101,14 @@ class Window(HumWindowBase):
         cmds.menuItem(l=Lang.pack(u'XMLフォルダを開く', 'Open XML Folder', lang), c=lambda *args: self.__open_xmls_folder_in_explorer())
 
     def __build_language_radio_menu(self, lang):
-        cmds.menuItem(l=Lang.pack(u'言語', 'Language', lang), subMenu=True, tearOff=True)
+        cmds.menuItem(l=Lang.pack_([u'言語', 'Language', u'语言'], lang), subMenu=True, tearOff=True)
         cmds.radioMenuItemCollection()
-        labels = [Lang.pack(u'日本語', 'Japanese', lang), Lang.pack(u'英語', 'English', lang)]
+        labels = [Lang.pack_([u'日本語', 'Japanese', u'日语'], lang),
+                  Lang.pack_([u'英語', 'English', u'英语'], lang),
+                  Lang.pack_([u'中国語(簡体字)', 'Simplified Chinese', u'简体中文'], lang)]
         cmds.menuItem(l=labels[0], radioButton=(lang == Lang.ja_JP), c=lambda *args: self.__set_lang_option_var(Lang.ja_JP))
         cmds.menuItem(l=labels[1], radioButton=(lang == Lang.en_US), c=lambda *args: self.__set_lang_option_var(Lang.en_US))
+        cmds.menuItem(l=labels[2], radioButton=(lang == Lang.zh_CN), c=lambda *args: self.__set_lang_option_var(Lang.zh_CN))
         cmds.setParent('..', menu=True)
 
     def __set_lang_option_var(self, lang):
