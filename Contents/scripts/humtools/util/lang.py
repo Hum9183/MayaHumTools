@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
+from . import str_util
+from .list_util import try_get_item
 from ..hum_tools_const import HumToolsConst
 
 
 class Lang:
-    ja_JP = 'ja_JP'
-    ja_JP_index = 0
     en_US = 'en_US'
-    en_US_index = 1
+    en_US_index = 0
+    ja_JP = 'ja_JP'
+    ja_JP_index = 1
     zh_CN = 'zh_CN'
     zh_CN_index = 2
 
     @staticmethod
-    def pack_(texts, select=None):
+    def select(texts, select=None):
         """日本語の文字列と英語の文字列をパックし、適切な言語の文字列を返す。
 
         Args:
@@ -29,18 +31,21 @@ class Lang:
         else:
             lang = select
 
-        if texts is False:
-            raise Exception(u'テキストがありません')
-
-        # TODO: 文字列にuをつけるのは大変なのでなにか方法を考える
-        if lang == Lang.ja_JP:
-            return Lang.__try_get(texts, Lang.ja_JP_index)
-        elif lang == Lang.en_US:
-            return Lang.__try_get(texts, Lang.en_US_index)
+        text = str_util.EMPTY
+        success = False
+        if lang == Lang.en_US:
+            text, success = try_get_item(texts, Lang.en_US_index)
+        elif lang == Lang.ja_JP:
+            text, success = try_get_item(texts, Lang.ja_JP_index)
         elif lang == Lang.zh_CN:
-            return Lang.__try_get(texts, Lang.zh_CN_index)
+            text, success = try_get_item(texts, Lang.zh_CN_index)
         else:
-            return Lang.__try_get(texts, Lang.en_US_index)
+            text, success = try_get_item(texts, Lang.en_US_index)
+
+        if success:
+            return str_util.decode(text)
+        else:
+            return str_util.EMPTY
 
     # noinspection PyPep8Naming
     @staticmethod
@@ -69,11 +74,3 @@ class Lang:
             return _en_US
         else:
             return _en_US
-
-    # TODO: 汎用的に書いて、utilに引っ越す
-    @staticmethod
-    def __try_get(texts, index):
-        try:
-            return texts[index]
-        except IndexError:
-            return texts[0]
