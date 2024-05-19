@@ -7,3 +7,5 @@ def decode(string):
         return string.decode('utf-8')
     except UnicodeEncodeError:
         return string
+    except AttributeError:
+        return string
