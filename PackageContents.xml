@@ -6,7 +6,7 @@
 	Name="HumTools"
 	Description="Autodesk Maya HumTools"
 	AppVersion="1.0.0"
-	Author="Hum"
+	Author="Hum9183"
 	AppNameSpace="com.autodesk.exchange.maya.humtools"
 	HelpFile=""
 	OnlineDocumentation=""
@@ -14,15 +14,15 @@
 	ProductCode="*"
 >
 
-	<CompanyDetails Name="Hum"
+	<CompanyDetails Name=""
 		Phone=" "
 		Url=""
 		Email="" />
 
-	<RuntimeRequirements SupportPath="./Contents" OS="win64" Platform="Maya" SeriesMin="2014"/>
+	<RuntimeRequirements SupportPath="./Contents" OS="win64|macOS|linux" Platform="Maya" SeriesMin="2014"/>
 
 	<Components>
-		<RuntimeRequirements SupportPath="./Contents" OS="win64" Platform="Maya" SeriesMin="2014"/>
+		<RuntimeRequirements SupportPath="./Contents" OS="win64|macOS|linux" Platform="Maya" SeriesMin="2014"/>
 		<ComponentEntry ModuleName="./scripts/userSetup.py" />
 	</Components>
 
