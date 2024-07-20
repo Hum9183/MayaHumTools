@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-from maya import cmds
 
+from . import selection
+from . import tweak_helper
 from ..lib import blendshape
 from ..util.log import Log
 from ..util.selection_recorder import SelectionRecorder
-from . import selection
-from . import tweak_helper
 
 
 @SelectionRecorder.record

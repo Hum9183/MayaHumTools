@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 import inspect
 
-from maya import cmds
-
-from .. import menu_adder
-from .const import Const
 from . import startup_command
+from .const import Const
+from .. import menu_adder
 
 
 def add_menu():

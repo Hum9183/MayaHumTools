@@ -2,12 +2,12 @@
 from maya import cmds
 from maya.common.ui import LayoutManager
 
-from ..util.hum_window_base import HumWindowBase
-from ..util import in_view_message
-from ..util.unexpected_error import UnexpectedError
-from .const import Const
 from . import cv_freezer
 from . import rebuilt_target_mesh_deleter
+from .const import Const
+from ..util import in_view_message
+from ..util.hum_window_base import HumWindowBase
+from ..util.unexpected_error import UnexpectedError
 
 
 class Window(HumWindowBase):

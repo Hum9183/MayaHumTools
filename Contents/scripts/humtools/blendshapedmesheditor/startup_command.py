@@ -6,12 +6,13 @@ def bsme_startup_command():
 
 
 def bsme_reload_modules():
-    from humtools.blendshapedmesheditor import const, window, rebuilt_target_mesh_deleter, cv_freezer, uv_shifter, selection, \
+    from humtools.blendshapedmesheditor import const, window, rebuilt_target_mesh_deleter, cv_freezer, uv_shifter, \
+        selection, \
         non_deformer_history_deleter, tweak_helper
 
     from humtools import module_reloader
     modules = [const, window, rebuilt_target_mesh_deleter, cv_freezer, uv_shifter, selection, \
-                non_deformer_history_deleter, tweak_helper]
+               non_deformer_history_deleter, tweak_helper]
     module_reloader.reload_a_few_times(modules)
 
 

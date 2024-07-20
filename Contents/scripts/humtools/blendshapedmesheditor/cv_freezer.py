@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from maya import cmds
 
-from ..util.log import Log
-from ..util.selection_recorder import SelectionRecorder
 from . import non_deformer_history_deleter
 from . import selection
 from . import tweak_helper
 from . import uv_shifter
+from ..util.log import Log
+from ..util.selection_recorder import SelectionRecorder
 
 
 @SelectionRecorder.record
