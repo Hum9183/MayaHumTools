@@ -2,16 +2,16 @@
 
 from maya import cmds
 
-from ..util.extensions      import Extensions
-from ..util.lang            import Lang
-from ..util.log             import Log
+from .lang_op_var import LangOpVar
+from ..util.extensions import Extensions
+from ..util.lang import Lang
+from ..util.log import Log
 from ..util.progress_window import ProgressWindow
-from .lang_op_var           import LangOpVar
 
 
 class DeformerWeightsExporter:
     def __init__(self, xmls_folder_path, xml_text_scroll_list):
-        self.__xmls_folder_path     = xmls_folder_path
+        self.__xmls_folder_path = xmls_folder_path
         self.__xml_text_scroll_list = xml_text_scroll_list
 
     def export_xmls(self, mesh_parent_transform_and_skincluster_dict):
@@ -40,10 +40,10 @@ class DeformerWeightsExporter:
 
     def __export_xmls(self, xml_file_name, skin_cluster):
         cmds.deformerWeights(
-                            xml_file_name,
-                            export=True,
-                            deformer=skin_cluster,
-                            path=self.__xmls_folder_path)
+            xml_file_name,
+            export=True,
+            deformer=skin_cluster,
+            path=self.__xmls_folder_path)
 
     def __log(self, mesh_parent_transform):
         log_msg = Lang.pack(u'{}のXMLを作成しました。'.format(mesh_parent_transform),
