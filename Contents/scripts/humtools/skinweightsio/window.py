@@ -103,9 +103,7 @@ class Window(HumWindowBase):
     def __build_language_radio_menu(self, lang):
         cmds.menuItem(l=Lang.select(['Language', '言語', '语言'], lang), subMenu=True, tearOff=True)
         cmds.radioMenuItemCollection()
-        labels = [Lang.select(['English', '英語', '英语'], lang),
-                  Lang.select(['Japanese', '日本語', '日语'], lang),
-                  Lang.select(['Chinese (Simplified)', '中国語 (簡体字)', '简体中文'], lang)]
+        labels = ['English', '日本語', '简体中文']
         cmds.menuItem(l=labels[0], radioButton=(lang == Lang.en_US), c=lambda *args: self.__set_lang_option_var(Lang.en_US))
         cmds.menuItem(l=labels[1], radioButton=(lang == Lang.ja_JP), c=lambda *args: self.__set_lang_option_var(Lang.ja_JP))
         cmds.menuItem(l=labels[2], radioButton=(lang == Lang.zh_CN), c=lambda *args: self.__set_lang_option_var(Lang.zh_CN))
