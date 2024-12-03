@@ -2,10 +2,11 @@
 
 from maya import cmds
 
-from ..util.extensions import Extensions
-from ..util.lang       import Lang
-from ..util.log        import Log
-from .lang_op_var      import LangOpVar
+from ..util.extensions      import Extensions
+from ..util.lang            import Lang
+from ..util.log             import Log
+from ..util.progress_window import ProgressWindow
+from .lang_op_var           import LangOpVar
 
 
 class DeformerWeightsExporter:
@@ -14,11 +15,24 @@ class DeformerWeightsExporter:
         self.__xml_text_scroll_list = xml_text_scroll_list
 
     def export_xmls(self, mesh_parent_transform_and_skincluster_dict):
+        progress_window = ProgressWindow(len(mesh_parent_transform_and_skincluster_dict),
+                                         Lang.pack(u'XMLを生成中...', 'Creating XMLs...', LangOpVar.get()),
+                                         LangOpVar.get())
+        progress_window.show()
+
         for mesh_parent_transform, skin_cluster in mesh_parent_transform_and_skincluster_dict.items():
+            # ProgressWindowの更新処理
+            if progress_window.is_cancelled():
+                break
+            if progress_window.is_greater_than_max():
+                break
+            progress_window.next()
+
             xml_file_name = self.__get_xml_file_name(mesh_parent_transform)
             self.__export_xmls(xml_file_name, skin_cluster)
             self.__log(mesh_parent_transform)
 
+        progress_window.close()
         self.__load_text_scroll_list()
 
     def __get_xml_file_name(self, mesh_parent_transform):
