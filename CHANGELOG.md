@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Changed
 - [#4](https://github.com/Hum9183/MayaHumTools/pull/4) Changed language labels to show each language in its own language.
 
+### Whole
+#### Added
+- Add CHANGELOGs.
+
 ## [1.0.0] - 2024-12-2
 - release the tools.
 
