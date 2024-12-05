@@ -10,7 +10,7 @@
 #### 追加
 - [#5](https://github.com/Hum9183/MayaHumTools/pull/5) 処理中にprogressWindow(進捗バー)を出すようにしました。
 
-#### 変更点
+#### 変更
 - [#4](https://github.com/Hum9183/MayaHumTools/pull/4) 言語のラベルをそれぞれの言語で表示するように変更しました。
 
 ## [1.0.0] - 2024-12-2
