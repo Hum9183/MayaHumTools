@@ -9,11 +9,10 @@
 #### 已添加
 - [#5](https://github.com/Hum9183/MayaHumTools/pull/5) 现在处理过程中会显示进度窗口（进度条）。
 
-### 已更改
+#### 已更改
 - [#4](https://github.com/Hum9183/MayaHumTools/pull/4) 语言标签现在以相应的语言显示。
 
 ## [1.0.0] - 2024-12-2
-### 已添加
 - 发布工具
 
 [未发布]: https://github.com/Hum9183/MayaHumTools/compare/1.0.0...master
