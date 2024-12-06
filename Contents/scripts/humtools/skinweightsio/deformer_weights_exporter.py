@@ -24,8 +24,6 @@ class DeformerWeightsExporter:
             # ProgressWindowの更新処理
             if progress_window.is_cancelled():
                 break
-            if progress_window.is_greater_than_max():
-                break
             progress_window.next()
 
             xml_file_name = self.__get_xml_file_name(mesh_parent_transform)

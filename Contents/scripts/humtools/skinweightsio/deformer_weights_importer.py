@@ -32,8 +32,6 @@ class DeformerWeightsImporter:
             # ProgressWindowの更新処理
             if progress_window.is_cancelled():
                 break
-            if progress_window.is_greater_than_max():
-                break
             progress_window.next()
 
             # XMLがあるか確認

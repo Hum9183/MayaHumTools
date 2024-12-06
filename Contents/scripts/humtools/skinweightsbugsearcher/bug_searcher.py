@@ -41,8 +41,6 @@ def __get_bugs(working_mesh, progress_window):
     while not working_mesh.mesh_vert_it_main.isDone():
         if progress_window.is_cancelled():
             break
-        if progress_window.is_greater_than_max():
-            break
         progress_window.next()
 
         nearby_vert_ids = working_mesh.get_vert_ids_nearby_current_vert()
