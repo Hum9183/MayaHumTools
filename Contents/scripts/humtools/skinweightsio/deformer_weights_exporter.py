@@ -20,6 +20,7 @@ class DeformerWeightsExporter:
                                          LangOpVar.get())
         progress_window.show()
 
+        success = False
         for mesh_parent_transform, skin_cluster in mesh_parent_transform_and_skincluster_dict.items():
             # ProgressWindowの更新処理
             if progress_window.is_cancelled():
@@ -31,9 +32,13 @@ class DeformerWeightsExporter:
             xml_file_name = self.__get_xml_file_name(mesh_parent_transform)
             self.__export_xmls(xml_file_name, skin_cluster)
             self.__log(mesh_parent_transform)
+        else:
+            success = True
 
         progress_window.close()
         self.__load_text_scroll_list()
+
+        return success
 
     def __get_xml_file_name(self, mesh_parent_transform):
         return '{}{}'.format(mesh_parent_transform, Extensions.XML)

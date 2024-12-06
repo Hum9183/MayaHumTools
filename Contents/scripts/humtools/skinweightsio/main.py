@@ -20,9 +20,9 @@ def create_xml(xmls_folder_path, xml_text_scroll_list):
     mesh_parent_transform_and_skincluster_dict = mesh_parent_transform_and_skincluster_dict_getter.get_for_export(mesh_parent_transforms)
 
     deformer_weights_exporter = DeformerWeightsExporter(xmls_folder_path, xml_text_scroll_list)
-    deformer_weights_exporter.export_xmls(mesh_parent_transform_and_skincluster_dict)
+    success = deformer_weights_exporter.export_xmls(mesh_parent_transform_and_skincluster_dict)
 
-    __show_completion_message()
+    __show_completion_message(success)
 
 
 @UnexpectedError.catch
@@ -41,9 +41,9 @@ def copy_weights(xmls_folder_path, option_settings):
         __raise_copy_weights_err()
 
     deformer_weights_importer = DeformerWeightsImporter(xmls_folder_path, option_settings)
-    deformer_weights_importer.import_xmls(transform_and_skincluster_dict_normalized)
+    success = deformer_weights_importer.import_xmls(transform_and_skincluster_dict_normalized)
 
-    __show_completion_message()
+    __show_completion_message(success)
 
 
 def __raise_copy_weights_err():
@@ -61,5 +61,8 @@ def __raise_copy_weights_err():
     raise UnexpectedError(err_msg)
 
 
-def __show_completion_message():
-    in_view_message.show(Lang.pack(u"処理が完了しました。", 'The process has been completed.', LangOpVar.get()))
+def __show_completion_message(success):
+    if success:
+        in_view_message.show(Lang.pack(u"処理が完了しました。", 'The process has been completed.', LangOpVar.get()))
+    else:
+        in_view_message.show(Lang.pack(u"処理を中断しました。", 'Processing has been interrupted.', LangOpVar.get()))

@@ -27,6 +27,7 @@ class DeformerWeightsImporter:
                                          LangOpVar.get())
         progress_window.show()
 
+        success = False
         # NOTE: xmlと同名のメッシュ(メッシュの親トランスフォーム)に自動でウェイトをコピーする
         for mesh_parent_transform, skin_cluster in transform_and_skincluster_dict.items():
             # ProgressWindowの更新処理
@@ -54,9 +55,12 @@ class DeformerWeightsImporter:
                                 'Copied weights to {}.'.format(mesh_parent_transform),
                                 LangOpVar.get())
             Log.log(log_msg)
+        else:
+            success = True  # TODO: Falseの場合はUndoチャンクで囲ってUndoまでする
 
         progress_window.close()
-        # self.__option_settings.log()
+
+        return success
 
     def __get_xml_file_name(self, mesh_parent_transform):
         return '{}{}'.format(mesh_parent_transform, Extensions.XML)
