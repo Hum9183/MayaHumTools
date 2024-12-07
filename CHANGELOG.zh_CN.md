@@ -11,6 +11,7 @@
 
 #### 已更改
 - [#4](https://github.com/Hum9183/MayaHumTools/pull/4) 语言标签现在以相应的语言显示。
+- [#11](https://github.com/Hum9183/MayaHumTools/pull/11) 更改了进程中断时的 inViewMessage 措辞。
 
 ### 全部
 #### 已添加

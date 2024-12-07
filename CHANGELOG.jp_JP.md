@@ -12,6 +12,7 @@
 
 #### 変更
 - [#4](https://github.com/Hum9183/MayaHumTools/pull/4) 言語のラベルをそれぞれの言語で表示するように変更しました。
+- [#11](https://github.com/Hum9183/MayaHumTools/pull/11) 処理を中断した際のinViewMessageの文言を変更しました。
 
 ### 全体
 #### 追加
