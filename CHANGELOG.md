@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#5](https://github.com/Hum9183/MayaHumTools/pull/5) A progressWindow (progress bar) is now displayed during processing.
 
 #### Changed
-- [#4](https://github.com/Hum9183/MayaHumTools/pull/4) Changed language labels to show each language in its own language.
+- [#4](https://github.com/Hum9183/MayaHumTools/pull/4) Change language labels to show each language in its own language.
+- [#11](https://github.com/Hum9183/MayaHumTools/pull/11) Change wording of inViewMessage when processing is interrupted.
+
+### Whole
+#### Added
+- Add CHANGELOGs.
 
 ## [1.0.0] - 2024-12-2
 - release the tools.
