@@ -56,7 +56,7 @@ class DeformerWeightsImporter:
                                 LangOpVar.get())
             Log.log(log_msg)
         else:
-            success = True  # TODO: Falseの場合はUndoチャンクで囲ってUndoまでする
+            success = True
 
         progress_window.close()
 
