@@ -42,6 +42,7 @@ class DeformerWeightsExporter:
         return '{}{}'.format(mesh_parent_transform, Extensions.XML)
 
     def __export_xmls(self, xml_file_name, skin_cluster):
+        # NOTE: 同名ファイルがすでにある場合は上書きする
         cmds.deformerWeights(
             xml_file_name,
             export=True,

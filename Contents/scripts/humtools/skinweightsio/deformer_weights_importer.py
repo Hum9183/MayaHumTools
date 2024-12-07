@@ -72,7 +72,7 @@ class DeformerWeightsImporter:
             en_US = 'Weight copy could not be performed because XML with the same name as {} does not exist.'.format(
                 mesh_parent_transform)
             warning_msg = Lang.pack(ja_JP, en_US, LangOpVar.get())
-            Log.warning(warning_msg)  # TODO: Logだけだと気が付きにくいためinViewMessageも出す
+            Log.warning(warning_msg)
             return False
 
     def __normalize_weights(self, skin_cluster, normalize_weights):
