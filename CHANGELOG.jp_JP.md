@@ -5,7 +5,7 @@
 フォーマットは[Keep a Changelog](http://keepachangelog.com/)に準拠しており、
 このプロジェクトは[Semantic Versioning](http://semver.org/)に基づいています。
 
-## [[未リリース]]
+## [1.1.0] - 2025-02-06
 ### SkinWeightsIO
 #### 追加
 - [#5](https://github.com/Hum9183/MayaHumTools/pull/5) 処理中にprogressWindow(進捗バー)を出すようにしました。
@@ -18,7 +18,7 @@
 #### 追加
 - CHANGELOGを追加しました。
 
-## [1.0.0] - 2024-12-2
+## [1.0.0] - 2024-12-02
 - ツールをリリース
 
 [未リリース]: https://github.com/Hum9183/MayaHumTools/compare/1.0.0...master

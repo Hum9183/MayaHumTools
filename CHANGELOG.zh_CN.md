@@ -4,7 +4,7 @@
 
 格式基于[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 并且此项目遵循[Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
-## [[未发布]]
+## [1.1.0] - 2025-02-06
 ### SkinWeightsIO
 #### 已添加
 - [#5](https://github.com/Hum9183/MayaHumTools/pull/5) 现在处理过程中会显示进度窗口（进度条）。
@@ -17,7 +17,7 @@
 #### 已添加
 - 已添加更改日志。
 
-## [1.0.0] - 2024-12-2
+## [1.0.0] - 2024-12-02
 - 发布工具
 
 [未发布]: https://github.com/Hum9183/MayaHumTools/compare/1.0.0...master
